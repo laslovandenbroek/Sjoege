@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="nl" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/component.css" />
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+<script src="js/modernizr.js"></script>
+<title>Sjoege </title>
+</head>
+
+<body>
+ <!--
+
+		
+		<nav class="menu menu--ferdinand">
+		<ul class="menu__list">
+		<li class="menu__item menu__item--current"><a href="#" class="menu__link">SJOEGE</a></li>
+		<li class="menu__item"><a href="#" class="menu__link">SJOEGE</a></li>
+		<li class="menu__item"><a href="#" class="menu__link">ABOUT</a></li>
+		<li class="menu__item"><a href="#" class="menu__link">CONTACT</a></li>
+		</ul>
+		</nav>
+	-->
+		
+		
+		<div class="menu menu--ferdinand">
+		    <div class="menu__list">
+			<span class="menu__item menu__item--current"><a class="menu__link">SJOEGE</a></span>
+			<span class="menu__item"><a class="menu__link">PROJECTS</a></span>
+			<span class="menu__item"><a class="menu__link cd-nav-trigger">CONTACT</a></span>
+			</div>
+	    </div>
+		
+		<main>
+		<h1>Full-Screen Pushing Navigation</h1>
+		<p>A full page menu, that replaces the current content by pushing it off the screen.</p>
+	    </main>
+		
+		
+		<!--
+		<a class="cd-nav-trigger">LASLO</a>
+		-->
+		
+		<div id="cd-nav" class="cd-nav">
+		<div class="cd-navigation-wrapper">
+			<div class="cd-half-block">
+				<h2>Navigation</h2>
+
+				<nav>
+					<ul class="cd-primary-nav">
+						<li><a href="#0" class="selected">The team</a></li>
+						<li><a href="#0">Our services</a></li>
+						<li><a href="#0">Our projects</a></li>
+						<li><a href="#0">Start a project</a></li>
+						<li><a href="#0">Contact us</a></li>
+					</ul>
+				</nav>
+			</div>
+			
+			<div class="cd-half-block">
+				<address>
+					<ul class="cd-contact-info">
+						<li><a href="mailto:info@myemail.co">info@myemail.co</a></li>
+						<li>0244-12345678</li>
+						<li>
+							<span>MyStreetName 24</span>
+							<span>W1234X</span>
+							<span>London, UK</span>
+						</li>
+					</ul>
+				</address>
+			</div>
+		</div> 
+	</div>
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/main.js"></script>
+<script src="js/classie.js"></script>
+	<script>
+		(function() {
+			[].slice.call(document.querySelectorAll('.menu')).forEach(function(menu) {
+				var menuItems = menu.querySelectorAll('.menu__link'),
+					setCurrent = function(ev) {
+						ev.preventDefault();
+
+						var item = ev.target.parentNode; // li
+
+						// return if already current
+						if (classie.has(item, 'menu__item--current')) {
+							return false;
+						}
+						// remove current
+						classie.remove(menu.querySelector('.menu__item--current'), 'menu__item--current');
+						// set current
+						classie.add(item, 'menu__item--current');
+					};
+
+				[].slice.call(menuItems).forEach(function(el) {
+					el.addEventListener('click', setCurrent);
+				});
+			});
+
+		})(window);
+	</script>
+	
+</body>
+</html>
